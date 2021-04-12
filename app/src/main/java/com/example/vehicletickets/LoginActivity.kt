@@ -24,6 +24,17 @@ class LoginActivity : AppCompatActivity() {
         emailEditText=findViewById(R.id.maillogintextView) as EditText
         passwordEditText=findViewById(R.id.passlogintextView2) as EditText
 
+
+        ///if user already login
+        if(auth.currentUser!=null){
+            val user = auth.currentUser
+            val intent = Intent(this, MainActivity::class.java).apply {
+
+            }
+
+            startActivity(intent)
+        }
+
     }
 
     fun login(view: View) {
