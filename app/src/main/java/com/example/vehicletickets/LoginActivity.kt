@@ -9,6 +9,7 @@ import android.widget.EditText
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.ktx.Firebase
 
 class LoginActivity : AppCompatActivity() {
@@ -47,6 +48,10 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
 
                     val user = auth.currentUser
+
+
+
+
                     val intent = Intent(this, MainActivity::class.java).apply {
 
                     }
@@ -73,4 +78,6 @@ class LoginActivity : AppCompatActivity() {
         startActivity(intent)
 
     }
+
+
 }
