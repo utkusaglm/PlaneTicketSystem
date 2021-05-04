@@ -22,19 +22,19 @@ class LoginActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
         auth = Firebase.auth
-        emailEditText=findViewById(R.id.maillogintextView) as EditText
-        passwordEditText=findViewById(R.id.passlogintextView2) as EditText
+        emailEditText=findViewById(R.id.NameSurnameLogin) as EditText
+        passwordEditText=findViewById(R.id.PasswordLogin) as EditText
 
 
         ///if user already login
-        if(auth.currentUser!=null){
+        /*if(auth.currentUser!=null){
             val user = auth.currentUser
             val intent = Intent(this, MainActivity::class.java).apply {
 
             }
 
             startActivity(intent)
-        }
+        }*/
 
     }
 
