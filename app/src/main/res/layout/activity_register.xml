@@ -19,37 +19,39 @@
         android:gravity="center">
 
         <EditText
-            android:id="@+id/mailtextView"
-            android:layout_width="150dp"
-            android:textSize="20dp"
+            android:id="@+id/MailRegister"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center"
-            android:hint="E-mail" />
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="20dp"
+            android:drawableStart="@drawable/mailicon"
+            android:drawablePadding="5dp"
+            android:hint="Mail"
+            android:paddingLeft="5dp"
+            android:textSize="20sp" />
 
         <EditText
-            android:id="@+id/passtextView2"
+            android:id="@+id/PasswordRegister"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="20dp"
+            android:drawableStart="@drawable/lockicon"
+            android:drawablePadding="5dp"
             android:hint="Password"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:layout_width="150dp"
-            android:inputType="textPassword"/>
-
-        <EditText
-            android:id="@+id/passagaintextView3"
-            android:layout_height="wrap_content"
-            android:hint="Password Again"
-            android:textSize="20dp"
-            android:gravity="center"
-            android:layout_width="150dp"
-            android:inputType="textPassword"/>
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button"
-            android:layout_width="150dp"
+            android:id="@+id/buttonSıgnIn"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Register"
-            android:onClick="register"
+            android:layout_margin="20dp"
+            android:text="Sıgn In"
+            android:onClick="signin"
              />
 
     </LinearLayout>

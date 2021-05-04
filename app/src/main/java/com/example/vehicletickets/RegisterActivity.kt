@@ -17,77 +17,47 @@ import com.google.firebase.ktx.Firebase
 class RegisterActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
 
-    private lateinit var mailTextView: EditText
-    private lateinit var passTextView: EditText
-    private lateinit var passAgainTextView: EditText
+    private lateinit var mailEditView: EditText
+    private lateinit var passEditView: EditText
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_register)
-        mailTextView = findViewById(R.id.mailtextView) as EditText
-        passTextView = findViewById(R.id.passtextView2) as EditText
-        passAgainTextView = findViewById(R.id.passagaintextView3) as EditText
+        mailEditView = findViewById(R.id.MailRegister) as EditText
+        passEditView = findViewById(R.id.PasswordRegister) as EditText
         auth = Firebase.auth
     }
 
-    fun register(view: View) {
+    fun signin(view: View) {
 
-        val email: String = mailTextView.text.toString()
-        val password: String = passTextView.text.toString()
-        val passwordtrue: String = passAgainTextView.text.toString()
+        val email: String = mailEditView.text.toString()
+        val password: String = passEditView.text.toString()
 
-        if (password.equals(passwordtrue)) {
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
+        auth.signInWithEmailAndPassword(email, password)
+           .addOnCompleteListener(this) { task ->
+               if (task.isSuccessful) {
+                   // Sign in success, update UI with the signed-in user's information
 
-                        val user = auth.currentUser
+                   val user = auth.currentUser
+                   val intent = Intent(this, NewMainActivity::class.java).apply {
 
-                        saveFireStore("utku","saglam")
-                        Toast.makeText(
-                            baseContext, "Succesfull!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        val intent = Intent(this, MainActivity::class.java).apply {
+                   }
+                   startActivity(intent)
 
-                        }
+               } else {
+                   // If sign in fails, display a message to the user.
 
-                        startActivity(intent)
+                   Toast.makeText(
+                       baseContext, task.exception.toString(),
+                       Toast.LENGTH_SHORT
+                   ).show()
 
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(
-                            baseContext, task.exception.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
-
-
-                    }
-                }
-
-        } else {
-
-        }
+               }
+           }
 
 
     }
 
-    fun saveFireStore(firstname: String, lastname: String) {
-        val db = FirebaseFirestore.getInstance()
-        val user: MutableMap<String, Any> = HashMap()
-        user["firstName"] = firstname
-        user["lastName"] = lastname
 
-        db.collection("users")
-            .add(user)
-            .addOnSuccessListener {
-                Toast.makeText(this@RegisterActivity, "record added successfully ", Toast.LENGTH_SHORT ).show()
-            }
-            .addOnFailureListener{
-                Toast.makeText(this@RegisterActivity, "record Failed to add ", Toast.LENGTH_SHORT ).show()
-            }
-
-    }
 }

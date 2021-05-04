@@ -46,7 +46,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="20dp"
             android:drawableStart="@drawable/mailicon"
             android:drawablePadding="5dp"
@@ -58,11 +58,25 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="2dp"
             android:layout_marginRight="20dp"
             android:drawableStart="@drawable/lockicon"
             android:drawablePadding="5dp"
             android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingLeft="5dp"
+            android:textSize="20sp" />
+        <EditText
+            android:id="@+id/PasswordAgainLogin"
+            android:inputType="textPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginRight="20dp"
+            android:drawableStart="@drawable/lockicon"
+            android:drawablePadding="5dp"
+            android:hint="Again Password "
             android:paddingLeft="5dp"
             android:textSize="20sp" />
 
@@ -72,10 +86,10 @@
             android:layout_width="match_parent"
             android:layout_margin="20dp"
             android:layout_height="wrap_content"
-            android:onClick="login"
+            android:onClick="gotoregister"
             android:layout_gravity="center"
             android:backgroundTint="@color/deepwireframe"
-            android:text="login" />
+            android:text="Continue" />
         <TextView
             android:id="@+id/justtextinlogin"
             android:layout_width="match_parent"
@@ -90,12 +104,12 @@
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="40dp"
-            android:onClick="gotoregister"
+            android:layout_marginTop="30dp"
+            android:onClick="gotologin"
             android:foregroundGravity="bottom"
             android:background="@color/deepwireframe"
             android:backgroundTint="@color/deepwireframe"
-            android:text="Register" />
+            android:text="Sign In" />
 
     </LinearLayout>
 
