@@ -31,15 +31,15 @@ class LoginActivity : AppCompatActivity() {
 
 
         ///if user already login
-        /*if(auth.currentUser!=null){
+        if(auth.currentUser!=null){
             val user = auth.currentUser
-            val intent = Intent(this, MainActivity::class.java).apply {
+            val intent = Intent(this, NewMainActivity::class.java).apply {
 
 
             }
 
             startActivity(intent)
-        }*/
+        }
 
     }
 
@@ -142,16 +142,6 @@ class LoginActivity : AppCompatActivity() {
                 .show()
         }
 
-        /*db.collection("users")
-            .add(user)
-            .addOnSuccessListener {
-                Toast.makeText(this@LoginActivity, "record added successfully ", Toast.LENGTH_SHORT)
-                    .show()
-            }
-            .addOnFailureListener {
-                Toast.makeText(this@LoginActivity, "record Failed to add ", Toast.LENGTH_SHORT)
-                    .show()
-            }*/
 
     }
 

@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:background="@color/row"
     tools:context=".ui.main.NewProfileFragment">
 
 
@@ -11,7 +13,21 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/profilerecyclerview"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="match_parent" />
 
-</FrameLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="5dp"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/row" />
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:backgroundTint="#fff"
+        android:text="@string/res"
+        android:textColor="@color/deepwireframe"
+        android:textSize="15dp"/>
+
+</LinearLayout>

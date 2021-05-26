@@ -5,10 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="#FFF"
-    >
-
-
+    android:background="#F1F9FF"
+    android:padding="20dp">
 
 
     <TextView
@@ -18,8 +16,7 @@
         android:drawableStart="@drawable/profileicon"
         android:drawablePadding="2dp"
         android:text="UserName"
-        android:textSize="20dp"
-        android:padding="20dp"
+        android:padding="5dp"
         />
 
     <TextView
@@ -27,18 +24,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="loremipsum"
-        android:padding="20dp"/>
+        android:padding="5dp"/>
 
     <ImageView
         android:id="@+id/rowimageview"
-        android:layout_width="match_parent"
+        android:layout_width="300dp"
         android:layout_gravity="left"
         android:layout_height="200dp"
         app:srcCompat="@drawable/ic_launcher_background"
-        android:padding="20dp"/>
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/row"/>
+        android:padding="5dp"/>
 </LinearLayout>

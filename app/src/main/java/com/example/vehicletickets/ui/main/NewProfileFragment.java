@@ -56,7 +56,6 @@ public class NewProfileFragment extends Fragment {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 Users users = documentSnapshot.toObject(Users.class);
-                Toast.makeText(getActivity(),users.getEmail(),Toast.LENGTH_LONG).show();
 
                 //TO DO DO not make it static.
 

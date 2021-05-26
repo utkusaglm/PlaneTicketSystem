@@ -76,7 +76,7 @@
             android:layout_marginRight="20dp"
             android:drawableStart="@drawable/lockicon"
             android:drawablePadding="5dp"
-            android:hint="Again Password "
+            android:hint="Password "
             android:paddingLeft="5dp"
             android:textSize="20sp" />
 
