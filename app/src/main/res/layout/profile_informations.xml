@@ -59,7 +59,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="2dp"
-                android:text="Location"
+                android:text="Flight_n"
                 android:textColor="#2699FB"
                 android:textStyle="bold"
                 android:textSize="20dp"
@@ -112,7 +112,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:drawablePadding="2dp"
-                android:text="Flights"
+                android:text="Credit"
                 android:textColor="#2699FB"
                 android:textStyle="bold"
                 android:padding="5dp"
@@ -160,9 +160,24 @@
                 />
 
 
+
         </LinearLayout>
 
 
     </LinearLayout>
+    <Button
+        android:id="@+id/add_credit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawablePadding="2dp"
+        android:layout_marginTop="40dp"
+        android:text="@string/add_credit"
+        android:textColor="#2699FB"
+        android:backgroundTint="#F1F9FF"
+        android:textStyle="bold"
+        android:padding="2dp"
+        android:gravity="center"
+        />
+
 
 </LinearLayout>
