@@ -15,16 +15,19 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.vehicletickets.R;
-import com.example.vehicletickets.Users;
+import com.example.vehicletickets.models.Users;
+
 import com.example.vehicletickets.profileRecyclerAdapter;
+import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.auth.User;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Map;
 
 
 public class NewProfileFragment extends Fragment {
@@ -51,29 +54,55 @@ public class NewProfileFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
         documentReference=db.collection("users").document(firebaseAuth.getCurrentUser().getEmail());
-
+        DocumentReference documentReferenceforcities = db.collection("cities").document("cities");
         documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
             @Override
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 Users users = documentSnapshot.toObject(Users.class);
 
                 //TO DO DO not make it static.
+                ArrayList<String> listOfFlights=users.getFlights();
 
-                namesurname.add(users.getName()+" "+users.getSurname());
-                namesurname.add(users.getName()+" "+users.getSurname());
-                namesurname.add(users.getName()+" "+users.getSurname());
+                for(String a:listOfFlights){
+                    namesurname.add(users.getName()+" "+users.getSurname());
+                    documentReferenceforcities.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                        @Override
+                        public void onSuccess(DocumentSnapshot documentSnapshot) {
+                            Map<String, Object> map  = (Map<String, Object>) documentSnapshot.get(a);
+                            if (map != null) {
+                                story.add((String)map.get("story"));
+                                url.add((String)map.get("link"));
+                                System.out.println(((String)map.get("link")));
+                                System.out.println(((String)map.get("story")));
+                                pra.notifyDataSetChanged();
 
-                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
-                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
-                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
+                            }
+                        }
+                    }).addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(getContext(),e.getLocalizedMessage(),Toast.LENGTH_SHORT).show();
+                        }
+                    });
 
-                //url=new ArrayList<String>(users.getFlights());
 
-                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
-                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
-                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
+                }
 
-                pra.notifyDataSetChanged();
+//                  pra.notifyDataSetChanged();
+
+
+//
+//                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
+//                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
+//                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
+//
+//                //url=new ArrayList<String>(users.getFlights());
+//
+//                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
+//                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
+//                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
+
+
             }
         });
         pra=new profileRecyclerAdapter(url,namesurname,story);

@@ -9,28 +9,160 @@
     android:padding="20dp">
 
 
+    <ImageView
+        android:id="@+id/profile_icon"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/profile_icon_for_profile"
+        android:padding="5dp"/>
+
+
     <TextView
         android:id="@+id/UserName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:drawableStart="@drawable/profileicon"
         android:drawablePadding="2dp"
         android:text="UserName"
+        android:textSize="25dp"
+        android:textColor="#2699FB"
+        android:textStyle="bold"
         android:padding="5dp"
+        android:gravity="center"
         />
-
     <TextView
-        android:id="@+id/loremipsum"
+        android:id="@+id/location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="loremipsum"
-        android:padding="5dp"/>
+        android:drawablePadding="2dp"
+        android:text="Location"
+        android:textColor="#2699FB"
+        android:textStyle="bold"
+        android:textSize="15dp"
+        android:padding="5dp"
+        android:gravity="center"
+        />
 
-    <ImageView
-        android:id="@+id/rowimageview"
-        android:layout_width="300dp"
-        android:layout_gravity="left"
-        android:layout_height="200dp"
-        app:srcCompat="@drawable/ic_launcher_background"
-        android:padding="5dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="50dp"
+        >
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp">
+            <TextView
+                android:id="@+id/flight_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:text="Location"
+                android:textColor="#2699FB"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:text="Flights"
+                android:textColor="#2699FB"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center"
+                />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="|"
+            android:gravity="center"
+            android:layout_marginLeft="22.5dp"
+            android:textColor="#BCE0FD"
+            />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="22.5dp">
+            <TextView
+                android:id="@+id/credit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:text="Credit"
+                android:textColor="#2699FB"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/wallet"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:text="Flights"
+                android:textColor="#2699FB"
+                android:textStyle="bold"
+                android:padding="5dp"
+                android:gravity="center"
+                />
+
+
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:text="|"
+            android:gravity="center"
+            android:layout_marginLeft="22.5dp"
+            android:textColor="#BCE0FD"
+            />
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="22.5dp">
+            <TextView
+                android:id="@+id/bonus_numbers"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:text="Bonus"
+                android:textColor="#2699FB"
+                android:textStyle="bold"
+                android:textSize="20dp"
+                android:padding="5dp"
+                android:gravity="center"
+                />
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawablePadding="2dp"
+                android:text="Bonus"
+                android:textColor="#2699FB"
+                android:textStyle="bold"
+                android:padding="2dp"
+                android:gravity="center"
+                />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
 </LinearLayout>

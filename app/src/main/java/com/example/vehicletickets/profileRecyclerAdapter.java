@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecyclerAdapter.PostHolder> {
 
 
-   private ArrayList<String> url;
-   private ArrayList<String> namesurname;
-   private ArrayList<String> story;
+    private ArrayList<String> url;
+    private ArrayList<String> namesurname;
+    private ArrayList<String> story;
 
     public profileRecyclerAdapter(ArrayList<String> url, ArrayList<String> namesurname, ArrayList<String> story) {
         this.url = url;
@@ -27,14 +27,12 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
     }
 
 
-
-
     @NonNull
     @Override
     public PostHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        LayoutInflater layoutInflater=LayoutInflater.from(parent.getContext());
-        View view=layoutInflater.inflate(R.layout.profilelayoutrow,parent,false);
+        LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
+        View view = layoutInflater.inflate(R.layout.profilelayoutrow, parent, false);
         return new PostHolder(view);
     }
 
@@ -42,7 +40,8 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
     public void onBindViewHolder(@NonNull PostHolder holder, int position) {
         holder.nameSurnameText.setText(namesurname.get(position));
         holder.story.setText(story.get(position));
-        Picasso.get().load(url.get(position)).into(holder.imageView);
+        Picasso.get().load(url.get(position)).fit().centerCrop()
+                .into(holder.imageView);
 
 
     }
@@ -53,17 +52,16 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
     }
 
 
-
-    class PostHolder extends RecyclerView.ViewHolder{
+    class PostHolder extends RecyclerView.ViewHolder {
         ImageView imageView;
         TextView nameSurnameText;
         TextView story;
 
         public PostHolder(@NonNull View itemView) {
             super(itemView);
-            imageView=itemView.findViewById(R.id.rowimageview);
-            nameSurnameText=itemView.findViewById(R.id.UserName);
-            story=itemView.findViewById(R.id.loremipsum);
+            imageView = itemView.findViewById(R.id.rowimageview);
+            nameSurnameText = itemView.findViewById(R.id.UserName);
+            story = itemView.findViewById(R.id.loremipsum);
         }
     }
 

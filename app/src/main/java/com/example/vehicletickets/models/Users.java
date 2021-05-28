@@ -1,51 +1,34 @@
 package com.example.vehicletickets.models;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Stack;
 
-class cities {
-    private String url;
-    private String name;
-
-    public cities() {
-    }
-
-    public cities(String url, String name) {
-        this.url = url;
-        this.name = name;
-    }
-
-    public String getUrl() {
-        return url;
-    }
-
-    public void setUrl(String url) {
-        this.url = url;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-}
-
-class users{
+public class Users{
     private int bonus;
     private String country;
     private String creditCardInfo;
     private String email;
-    private LinkedList<String> flights;
+    private ArrayList<String> flights;
     private String name;
     private String surname;
     private int numberOfFlies;
+    private int wallet;
 
-    public users() {
+    public Users() {
     }
 
-    public users(int bonus, String country, String creditCardInfo, String email,  LinkedList<String> flights, String name, String surname, int numberOfFlies) {
+    public Users(int bonus, String country, String email, ArrayList<String> flights, String name, String surname, int numberOfFlies, int wallet) {
+        this.bonus = bonus;
+        this.country = country;
+        this.email = email;
+        this.flights = flights;
+        this.name = name;
+        this.surname = surname;
+        this.numberOfFlies = numberOfFlies;
+        this.wallet = wallet;
+    }
+
+    public Users(int bonus, String country, String creditCardInfo, String email, ArrayList<String> flights, String name, String surname, int numberOfFlies) {
         this.bonus = bonus;
         this.country = country;
         this.creditCardInfo = creditCardInfo;
@@ -56,7 +39,7 @@ class users{
         this.numberOfFlies = numberOfFlies;
     }
 
-    public users(int bonus, String country, String email,  LinkedList<String> flights, String name, String surname, int numberOfFlies) {
+    public Users(int bonus, String country, String email,  ArrayList<String> flights, String name, String surname, int numberOfFlies) {
         this.bonus = bonus;
         this.country = country;
         this.email = email;
@@ -99,11 +82,11 @@ class users{
         this.email = email;
     }
 
-    public LinkedList<String> getFlights() {
+    public ArrayList<String> getFlights() {
         return flights;
     }
 
-    public void setFlights( LinkedList<String> flights) {
+    public void setFlights( ArrayList<String> flights) {
         this.flights = flights;
     }
 
@@ -131,6 +114,11 @@ class users{
         this.numberOfFlies = numberOfFlies;
     }
 
+    public int getWallet() {
+        return wallet;
+    }
+
+    public void setWallet(int wallet) {
+        this.wallet = wallet;
+    }
 }
-
-

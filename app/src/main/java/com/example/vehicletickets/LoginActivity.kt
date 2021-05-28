@@ -133,7 +133,7 @@ class LoginActivity : AppCompatActivity() {
 
         val listOfFlies: List<String> = listOf("Antalya", "Corum", "Zurih")
 
-        val users = Users(firstname, lastname, email, null, 3, 20, listOfFlies, null)
+        val users = Users(firstname, lastname, email, "Turkey", 3, 20, listOfFlies, null)
         db.collection("users").document(email).set(users).addOnSuccessListener {
             Toast.makeText(this@LoginActivity, "record added successfully ", Toast.LENGTH_SHORT)
                 .show()
