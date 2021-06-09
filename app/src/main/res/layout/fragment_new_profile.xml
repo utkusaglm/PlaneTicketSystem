@@ -1,33 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="horizontal"
-    android:background="@color/row"
+    android:orientation="vertical"
+    android:background="@color/wireframe"
     tools:context=".ui.main.NewProfileFragment">
 
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        android:background="@color/white">
 
 
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/profilerecyclerview"
-        android:layout_width="360dp"
-        android:layout_height="match_parent" />
+        android:layout_width="match_parent"
+        android:layout_height="510dp"
+        android:background="@drawable/roundrecycler"/>
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="5dp"
-        android:layout_height="match_parent"
-        android:backgroundTint="@color/row" />
-    <Button
-        android:id="@+id/button"
+    <ImageButton
+        android:id="@+id/imageButton"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:backgroundTint="#fff"
-        android:text="@string/res"
-        android:textColor="@color/deepwireframe"
-        android:textSize="15dp"/>
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/wireframe"
+        android:layout_gravity="right"
+        android:src="@drawable/ic_baseline_add_box_24" />
+
 
 </LinearLayout>

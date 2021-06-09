@@ -11,6 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="top"
+        android:background="@drawable/trylogin"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -21,12 +22,13 @@
             android:id="@+id/imageView"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:text="Vehicle Ticket"
-            android:textSize="50dp"
-            android:textColor="#fff"
+            android:background="@color/wireframe"
             android:gravity="center"
-            app:srcCompat="@drawable/loginname"
-            android:background="@color/wireframe"/>
+            android:visibility="invisible"
+            android:text="Vehicle Ticket"
+            android:textColor="#fff"
+            android:textSize="50dp"
+            app:srcCompat="@drawable/loginname" />
 
         <EditText
             android:id="@+id/NameSurnameLogin"
@@ -35,50 +37,66 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="20dp"
-            android:drawableStart="@drawable/profileicon"
+            android:drawableStart="@drawable/ic_baseline_person_24"
             android:drawablePadding="5dp"
+            android:background="@color/wireframe"
+            android:alpha=".8"
             android:hint="Name and Surname"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:paddingLeft="5dp"
-            android:textSize="20sp" />
+            android:textSize="28sp" />
 
         <EditText
             android:id="@+id/MailLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:drawableStart="@drawable/mailicon"
+            android:drawableStart="@drawable/ic_baseline_mail_24"
+            android:textColor="@color/white"
+            android:background="@color/wireframe"
+            android:alpha=".8"
+            android:textColorHint="@color/white"
             android:drawablePadding="5dp"
             android:hint="Mail"
             android:paddingLeft="5dp"
-            android:textSize="20sp" />
+            android:textSize="28sp" />
         <EditText
             android:id="@+id/PasswordLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:drawableStart="@drawable/lockicon"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="5dp"
             android:hint="Password"
+            android:background="@color/wireframe"
+            android:alpha=".8"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:inputType="textPassword"
             android:paddingLeft="5dp"
-            android:textSize="20sp" />
+            android:textSize="28sp" />
         <EditText
             android:id="@+id/PasswordAgainLogin"
             android:inputType="textPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="2dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:drawableStart="@drawable/lockicon"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:drawablePadding="5dp"
             android:hint="Password "
+            android:background="@color/wireframe"
+            android:alpha=".8"
             android:paddingLeft="5dp"
-            android:textSize="20sp" />
+            android:textSize="28sp" />
 
 
         <Button
@@ -89,27 +107,30 @@
             android:onClick="gotoregister"
             android:layout_gravity="center"
             android:backgroundTint="@color/deepwireframe"
-            android:text="Continue" />
+            android:textSize="25sp"
+            android:text="Contınue" />
         <TextView
             android:id="@+id/justtextinlogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="10dp"
             android:textSize="20dp"
             android:text="Already have an account?"
-            android:textColor="@color/deepwireframe"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
             android:gravity="center"/>
-
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_marginTop="30dp"
+            android:layout_margin="20dp"
+            android:textSize="25sp"
+            android:layout_height="wrap_content"
             android:onClick="gotologin"
-            android:foregroundGravity="bottom"
-            android:background="@color/deepwireframe"
+            android:layout_gravity="center"
             android:backgroundTint="@color/deepwireframe"
-            android:text="Sign In" />
+            android:text="SIGN IN" />
+
+
 
     </LinearLayout>
 

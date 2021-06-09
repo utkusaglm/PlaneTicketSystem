@@ -12,12 +12,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:gravity="center"
         android:orientation="vertical"
+        android:background="@drawable/trylogin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:gravity="center">
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/MailRegister"
@@ -26,11 +29,14 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="2dp"
             android:layout_marginRight="20dp"
-            android:drawableStart="@drawable/mailicon"
+            android:drawableStart="@drawable/ic_baseline_mail_24"
             android:drawablePadding="5dp"
             android:hint="Mail"
+            android:alpha = ".8"
+            android:textColorHint="@color/white"
             android:paddingLeft="5dp"
-            android:textSize="20sp" />
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
         <EditText
             android:id="@+id/PasswordRegister"
@@ -39,21 +45,25 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="2dp"
             android:layout_marginRight="20dp"
-            android:drawableStart="@drawable/lockicon"
+            android:drawableStart="@drawable/ic_baseline_lock_24"
             android:drawablePadding="5dp"
             android:hint="Password"
+            android:alpha = ".8"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
             android:inputType="textPassword"
             android:paddingLeft="5dp"
-            android:textSize="20sp" />
+            android:textSize="25sp" />
 
         <Button
             android:id="@+id/buttonSıgnIn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"
-            android:text="Sıgn In"
             android:onClick="signin"
-             />
+            android:backgroundTint="@color/white"
+            android:textColor="#425C5A"
+            android:text="Sıgn In" />
 
     </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

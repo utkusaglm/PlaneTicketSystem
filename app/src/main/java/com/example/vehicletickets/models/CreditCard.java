@@ -1,4 +1,4 @@
-package com.example.vehicletickets;
+package com.example.vehicletickets.models;
 
 public class CreditCard {
 

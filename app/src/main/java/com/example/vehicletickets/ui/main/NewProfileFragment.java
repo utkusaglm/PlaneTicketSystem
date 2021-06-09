@@ -1,5 +1,6 @@
 package com.example.vehicletickets.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,8 +13,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
+import com.example.vehicletickets.FlightSearch;
 import com.example.vehicletickets.R;
 import com.example.vehicletickets.models.Users;
 
@@ -44,6 +47,8 @@ public class NewProfileFragment extends Fragment {
     ArrayList<String> story= new ArrayList<>();
     profileRecyclerAdapter pra;
     RecyclerView recyclerView;
+
+    Button new_res;
 
     public static NewProfileFragment newInstance(){
         return new NewProfileFragment();
@@ -117,10 +122,24 @@ public class NewProfileFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view= inflater.inflate(R.layout.fragment_new_profile, container, false);
+        new_res=view.findViewById(R.id.button_res);
         recyclerView = view.findViewById(R.id.profilerecyclerview);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(view.getContext()));
         recyclerView.setAdapter(pra);
+
+
+
+        new_res.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent=new Intent(getActivity(), FlightSearch.class);
+                startActivity(intent);
+            }
+        });
+
+
+
         return view;
     }
 

@@ -41,4 +41,6 @@
         N
     </string>
     <string name="add_credit">Add Credit</string>
+    <string name="title_activity_flight_search">FlightSearch</string>
+    <string name="pick_time" />
 </resources>

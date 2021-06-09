@@ -149,13 +149,7 @@ public class FragmentFlies extends Fragment {
             }
         });
 
-
-
         return view;
 
-
-//        LayoutInflater layoutInflater=LayoutInflater.from(getContext());
-//        View view=layoutInflater.inflate(R.layout.profilelayoutrow,parent,false);
-//        return new profileRecyclerAdapter.PostHolder(view);
     }
 }

@@ -31,15 +31,15 @@ class LoginActivity : AppCompatActivity() {
 
 
         ///if user already login
-        if (auth.currentUser != null) {
-            val user = auth.currentUser
-            val intent = Intent(this, NewMainActivity::class.java).apply {
-
-
-            }
-
-            startActivity(intent)
-        }
+//        if (auth.currentUser != null) {
+//            val user = auth.currentUser
+//            val intent = Intent(this, NewMainActivity::class.java).apply {
+//
+//
+//            }
+//
+//            startActivity(intent)
+//        }
 
     }
 
@@ -65,40 +65,50 @@ class LoginActivity : AppCompatActivity() {
         var nameandsurname = nameAndSurname.text.toString()
         val yourArray: List<String> = nameandsurname.split(" ")
 
+        if (email.equals("") || password.equals("") || passwordAgain.equals("") || nameandsurname.equals(
+                ""
+            )
+        ) {
+            Toast.makeText(
+                baseContext, "Missing Info!",
+                Toast.LENGTH_SHORT
+            ).show()
+        } else {
+            if (password.equals(passwordAgain)) {
 
+                auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this) { task ->
+                        if (task.isSuccessful) {
+                            // Sign in success, update UI with the signed-in user's information
 
-        if (password.equals(passwordAgain)) {
+                            val user = auth.currentUser
 
-            auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(this) { task ->
-                    if (task.isSuccessful) {
-                        // Sign in success, update UI with the signed-in user's information
+                            saveFireStore(yourArray[0], yourArray[1], email)
+                            Toast.makeText(
+                                baseContext, "Succesfull!",
+                                Toast.LENGTH_SHORT
+                            ).show()
+                            val intent = Intent(this, NewMainActivity::class.java).apply {
 
-                        val user = auth.currentUser
+                            }
 
-                        saveFireStore(yourArray[0], yourArray[1], email)
-                        Toast.makeText(
-                            baseContext, "Succesfull!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                        val intent = Intent(this, NewMainActivity::class.java).apply {
+                            startActivity(intent)
+
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(
+                                baseContext, task.exception.toString(),
+                                Toast.LENGTH_SHORT
+                            ).show()
+
 
                         }
-
-                        startActivity(intent)
-
-                    } else {
-                        // If sign in fails, display a message to the user.
-                        Toast.makeText(
-                            baseContext, task.exception.toString(),
-                            Toast.LENGTH_SHORT
-                        ).show()
-
-
                     }
-                }
 
-        } else {
+            } else {
+
+            }
+
 
         }
 
@@ -134,7 +144,7 @@ class LoginActivity : AppCompatActivity() {
 
         val listOfFlies: List<String> = listOf("Antalya", "Corum", "Zurih")
 
-        val users = Users(firstname, lastname, email, "Turkey", 3, 20, listOfFlies, null,140)
+        val users = Users(firstname, lastname, email, "Turkey", 3, 20, listOfFlies, null, 140)
         db.collection("users").document(email).set(users).addOnSuccessListener {
             Toast.makeText(this@LoginActivity, "record added successfully ", Toast.LENGTH_SHORT)
                 .show()

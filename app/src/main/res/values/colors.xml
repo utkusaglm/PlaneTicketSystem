@@ -5,10 +5,10 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="wireframe">#86C1F0</color>
+    <color name="wireframe">#425C5A</color>
     <color name="row">#F1F9FF</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-    <color name="deepwireframe">#2699FB</color>
+    <color name="deepwireframe">#425C5A</color>
 
 </resources>
