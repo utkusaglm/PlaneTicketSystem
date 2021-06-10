@@ -31,15 +31,13 @@ class LoginActivity : AppCompatActivity() {
 
 
         ///if user already login
-//        if (auth.currentUser != null) {
-//            val user = auth.currentUser
-//            val intent = Intent(this, NewMainActivity::class.java).apply {
-//
-//
-//            }
-//
-//            startActivity(intent)
-//        }
+        if (auth.currentUser != null) {
+            val user = auth.currentUser
+            val intent = Intent(this, NewMainActivity::class.java).apply {
+            }
+
+            startActivity(intent)
+        }
 
     }
 

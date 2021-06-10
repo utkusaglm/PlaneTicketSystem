@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.VehicleTickets"
         android:usesCleartextTraffic="true">
-        <activity android:name=".SeeFlights"></activity>
+        <activity android:name=".flight_info"></activity>
+        <activity android:name=".SeeFlights" />
         <activity
             android:name=".FlightSearch"
             android:label="@string/title_activity_flight_search"

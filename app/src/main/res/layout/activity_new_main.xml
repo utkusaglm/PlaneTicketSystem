@@ -17,8 +17,8 @@
             android:id="@+id/tabs"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:tabTextColor="@color/deepwireframe"
-            android:background="@color/row" />
+            app:tabTextColor="@color/wireframe"
+            android:background="@color/white" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
