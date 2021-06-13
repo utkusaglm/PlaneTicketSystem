@@ -1,17 +1,20 @@
 package com.example.vehicletickets.adapter;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+
+import androidx.navigation.NavDirections;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vehicletickets.R;
-import com.example.vehicletickets.flight_info;
+import com.example.vehicletickets.fragments.add_select_flight_fragment;
+import com.example.vehicletickets.fragments.add_select_flight_fragmentDirections;
 
 import java.util.ArrayList;
 
@@ -68,15 +71,14 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
         holder.arrival_location_full.setText(arrival_location_fullarr.get(position));
         holder.flight_numbers.setText(flight_numbersarr.get(position));
 
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(context, flight_info.class);
-//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(intent);
-//
-//            }
-//        });
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+               NavDirections action= add_select_flight_fragmentDirections.actionAddSelectFlightFragmentToAddSeatFragment();
+               Navigation.findNavController(v).navigate(action);;
+
+            }
+        });
 
 
     }
