@@ -10,20 +10,22 @@
         android:label="fragment_add_flight_fragment"
         tools:layout="@layout/fragment_add_flight_fragment" >
         <action
-            android:id="@+id/action_add_flight_fragment_to_add_seat_fragment"
-            app:destination="@id/add_seat_fragment" />
+            android:id="@+id/action_add_flight_fragment_to_add_select_flight_fragment"
+            app:destination="@id/add_select_flight_fragment" />
     </fragment>
     <fragment
         android:id="@+id/add_seat_fragment"
         android:name="com.example.vehicletickets.fragments.add_seat_fragment"
         android:label="fragment_add_seat_fragment"
         tools:layout="@layout/fragment_add_seat_fragment" >
-        <action
-            android:id="@+id/action_add_seat_fragment_to_add_flight_fragment"
-            app:destination="@id/add_flight_fragment" />
         <argument
             android:name="age"
             app:argType="integer"
             android:defaultValue="0" />
     </fragment>
+    <fragment
+        android:id="@+id/add_select_flight_fragment"
+        android:name="com.example.vehicletickets.fragments.add_select_flight_fragment"
+        android:label="fragment_add_select_flight_fragment"
+        tools:layout="@layout/fragment_add_select_flight_fragment" />
 </navigation>

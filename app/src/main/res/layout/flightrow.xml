@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="230dp"
+    android:layout_margin="5dp"
+    android:orientation="horizontal"
+    android:background="@drawable/flightcard"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:padding="10dp"
+        android:layout_gravity="left">
+        <TextView
+            android:id="@+id/departure_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DEP"
+            android:layout_gravity="left"
+            android:textColor="@color/arab"
+            android:textSize="35dp"
+            />
+        <TextView
+            android:id="@+id/departure_location_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="full"
+            android:layout_gravity="left"
+            android:textColor="@color/white"
+            android:textSize="25dp"
+            />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:textColor="@color/white"
+            android:layout_gravity="left"
+            android:alpha = ".5"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/date_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date"
+            android:layout_gravity="left"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_marginLeft="170dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/arrival_location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="ARR"
+            android:textColor="@color/arab"
+            android:textSize="35dp" />
+
+        <TextView
+            android:id="@+id/arrival_location_full"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="FULL"
+            android:textColor="@color/white"
+            android:textSize="25dp" />
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/flight_numbers_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:alpha=".8"
+            android:text="Flight Number"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+
+        <TextView
+            android:id="@+id/flight_numbers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="number"
+            android:textColor="@color/white"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

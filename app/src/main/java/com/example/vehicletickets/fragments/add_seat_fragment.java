@@ -40,12 +40,12 @@ public class add_seat_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button button=view.findViewById(R.id.button);
+        Button button=view.findViewById(R.id.buttons);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavDirections action= add_seat_fragmentDirections.actionAddSeatFragmentToAddFlightFragment();
-                Navigation.findNavController(view).navigate(action);
+              //  NavDirections action= add_seat_fragmentDirections.actionAddSeatFragmentToAddFlightFragment();
+                //Navigation.findNavController(view).navigate(action);
 
             }
         });

@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.vehicletickets.R;
 import com.example.vehicletickets.fragments.add_flight_fragmentDirections;
@@ -41,15 +42,12 @@ public class add_flight_fragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        Button button=view.findViewById(R.id.button);
+        ImageButton button=view.findViewById(R.id.go_forward);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavDirections action= add_flight_fragmentDirections.actionAddFlightFragmentToAddSeatFragment();
+                NavDirections action= add_flight_fragmentDirections.actionAddFlightFragmentToAddSelectFlightFragment();
                 Navigation.findNavController(view).navigate(action);
-
-
-
 
             }
         });
