@@ -39,6 +39,15 @@ public class add_select_flight_fragment extends Fragment {
     ArrayList<String> arrival_locationarr = new ArrayList<>();
     ArrayList<String> arrival_location_fullarr = new ArrayList<>();
     ArrayList<String> flight_numbersarr = new ArrayList<>();
+    private static final String[] paths = {"ADN", "ADY", "AFY", "AĞR", "AMS", "ANK", "ATY", "ART",
+            "AYD", "Balıkesir", "Bilecik", "Bingöl", "Bitlis", "Bolu", "Burdur", "Bursa", "Çanakkale",
+            "Çankırı", "Çorum", "Denizli", "Diyarbakır", "Edirne", "Elazığ", "Erzincan", "Erzurum", "Eskişehir",
+            "Gaziantep", "Giresun", "Gümüşhane", "Hakkari", "Hatay", "Isparta", "Mersin", "İstanbul", "İzmir",
+            "Kars", "Kastamonu", "Kayseri", "Kırklareli", "Kırşehir", "Kocaeli", "Konya", "Kütahya", "Malatya",
+            "Manisa", "Kahramanmaraş", "Mardin", "Muğla", "Muş", "Nevşehir", "Niğde", "Ordu", "Rize", "Sakarya",
+            "Samsun", "Siirt", "Sinop", "Sivas", "Tekirdağ", "Tokat", "Trabzon", "Tunceli", "Şanlıurfa", "Uşak",
+            "Van", "Yozgat", "Zonguldak", "Aksaray", "Bayburt", "Karaman", "Kırıkkale", "Batman", "Şırnak",
+            "Bartın", "Ardahan", "Iğdır", "Yalova", "Karabük", "Kilis", "Osmaniye", "Düzce"};
 
 
 
@@ -136,6 +145,37 @@ public class add_select_flight_fragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        if(getArguments() !=null){
+            String departure=add_select_flight_fragmentArgs.fromBundle(getArguments()).getDepartureLocation();
+            String arrival=add_select_flight_fragmentArgs.fromBundle(getArguments()).getArrivalLocation();
+            String date=add_select_flight_fragmentArgs.fromBundle(getArguments()).getDate();
+            String classType=add_select_flight_fragmentArgs.fromBundle(getArguments()).getClassType();
+            int traveller=add_select_flight_fragmentArgs.fromBundle(getArguments()).getNumTraveller();
+            System.out.println(departure+arrival+date+classType+traveller);
+
+
+        }
+
+        String[] new_paths=new String[paths.length];
+        int j=0;
+        for(String str:paths){
+            String new_str="";
+            for(int i=0;i<3;i++){
+                str=str.toUpperCase();
+                new_str+=str.charAt(i);
+            }
+            new_paths[j]=new_str;
+            j++;
+            System.out.println(new_str);
+        }
+
+
+
+
+
+
+
 
 
 

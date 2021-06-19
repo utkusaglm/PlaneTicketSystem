@@ -25,6 +25,10 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
 //    private ArrayList<String> namesurname;
 //    private ArrayList<String> story;
 
+
+
+
+
     private ArrayList<String> departure_locationarr;
     private ArrayList<String> departure_location_fullarr;
     private ArrayList<String> date_locationarr;

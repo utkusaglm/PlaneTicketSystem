@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".fragments.add_select_flight_fragment">
+    tools:context=".fragments.add_seat_fragment">
 
 
 
@@ -429,6 +429,103 @@
                     android:background="@drawable/koltuk"/>
 
             </androidx.gridlayout.widget.GridLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/shortname_id_departure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NME"
+                    android:textColor="@color/arabrengi"
+                    android:textSize="35dp"
+                    android:layout_marginLeft="150dp"
+                    />
+                <TextView
+                    android:id="@+id/longname_id_departure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NME"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="150dp"
+                    />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/plane"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="right"/>
+                <TextView
+                    android:id="@+id/shortname_id_arrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NME"
+                    android:textColor="@color/arabrengi"
+                    android:textSize="35dp"
+                    android:layout_marginLeft="150dp"
+                    />
+                <TextView
+                    android:id="@+id/longname_id_arrival"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="NME"
+                    android:textSize="18dp"
+                    android:textColor="@color/white"
+                    android:layout_gravity="right"
+                    android:layout_marginLeft="150dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="FLIGHT NO"
+                    android:alpha=".5"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="15dp"
+                    android:layout_gravity="right"/>
+                <TextView
+                    android:id="@+id/flıght_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="kb77"
+                    android:textColor="@color/white"
+                    android:textSize="19dp"
+                    android:layout_gravity="right"
+                    />
+                <TextView
+                    android:id="@+id/seat_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="19"
+                    android:textSize="40dp"
+                    android:textColor="@color/arabrengi"
+                    android:layout_gravity="right"
+                    android:layout_marginTop="20dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Seat"
+                    android:textColor="@color/white"
+                    android:layout_gravity="right"/>
+                <ImageButton
+                    android:id="@+id/go_forward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/goforward"
+                    android:background="@color/wireframe"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="15dp"
+                    />
+
+
+
+
+            </LinearLayout>
 
 
         </LinearLayout>

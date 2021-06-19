@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:text="full"
             android:layout_gravity="left"
-            android:textColor="@color/white"
+            android:textColor="@color/arab"
             android:textSize="25dp"
             />
 
@@ -39,7 +39,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Date"
-            android:textColor="@color/white"
+            android:textColor="@color/arab"
             android:layout_gravity="left"
             android:alpha = ".5"
             android:textSize="20dp" />
@@ -50,7 +50,7 @@
             android:layout_height="wrap_content"
             android:text="Date"
             android:layout_gravity="left"
-            android:textColor="@color/white"
+            android:textColor="@color/arab"
             android:textSize="20dp"
             />
 
@@ -78,7 +78,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="FULL"
-            android:textColor="@color/white"
+            android:textColor="@color/arab"
             android:textSize="25dp" />
 
         <TextView
@@ -89,7 +89,7 @@
             android:layout_gravity="left"
             android:alpha=".8"
             android:text="Flight Number"
-            android:textColor="@color/white"
+            android:textColor="@color/arab"
             android:textSize="15dp" />
 
         <TextView
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="number"
-            android:textColor="@color/white"
+            android:textColor="@color/arab"
             android:textSize="15dp" />
     </LinearLayout>
 
