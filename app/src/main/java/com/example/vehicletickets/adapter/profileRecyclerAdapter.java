@@ -18,9 +18,7 @@ import java.util.ArrayList;
 public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecyclerAdapter.PostHolder> {
 
 
-//    private ArrayList<String> url;
-//    private ArrayList<String> namesurname;
-//    private ArrayList<String> story;
+
 
     private ArrayList<String> departure_locationarr;
     private ArrayList<String> departure_location_fullarr;
@@ -29,6 +27,13 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
     private ArrayList<String> arrival_locationarr;
     private ArrayList<String> arrival_location_fullarr;
     private ArrayList<String> flight_numbersarr;
+    private ArrayList<String> timearr;
+    private ArrayList<String> seatarr;
+    private ArrayList<String> money;
+
+
+
+
     private View.OnClickListener mOnClickListener;
     private Context context;
 
@@ -40,7 +45,7 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
 //        this.story = story;
 //    }
 
-    public profileRecyclerAdapter(ArrayList<String> departure_location, ArrayList<String> departure_location_full, ArrayList<String> date_location, ArrayList<String> arrival_location, ArrayList<String> arrival_location_full, ArrayList<String> flight_numbers,Context context) {
+    public profileRecyclerAdapter(ArrayList<String> departure_location, ArrayList<String> departure_location_full, ArrayList<String> date_location, ArrayList<String> arrival_location, ArrayList<String> arrival_location_full, ArrayList<String> flight_numbers,ArrayList<String> timearr,ArrayList<String> seatarr,ArrayList<String> money,Context context) {
 
         this.departure_locationarr = departure_location;
         this.departure_location_fullarr = departure_location_full;
@@ -50,6 +55,10 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
         this.arrival_location_fullarr = arrival_location_full;
         this.flight_numbersarr = flight_numbers;
         this.context = context;
+
+        this.money = money;
+        this.timearr = timearr;
+        this.seatarr = seatarr;
     }
 
 
@@ -79,6 +88,15 @@ public class profileRecyclerAdapter extends RecyclerView.Adapter<profileRecycler
              @Override
              public void onClick(View v) {
                  Intent intent = new Intent(context, flight_info.class);
+                 intent.putExtra("departure",departure_location_fullarr.get(position));
+                 intent.putExtra("departure_short",departure_locationarr.get(position));
+                 intent.putExtra("date",date_locationarr.get(position));
+                 intent.putExtra("arrival",arrival_location_fullarr.get(position));
+                 intent.putExtra("arrival_short",arrival_locationarr.get(position));
+                 intent.putExtra("flight_number",flight_numbersarr.get(position));
+                 intent.putExtra("time",timearr.get(position));
+                 intent.putExtra("seat",seatarr.get(position));
+                 intent.putExtra("price",money.get(position));
                  intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                  context.startActivity(intent);
 

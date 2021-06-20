@@ -13,6 +13,7 @@ import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.vehicletickets.R;
+import com.example.vehicletickets.fragments.add_flight_fragmentDirections;
 import com.example.vehicletickets.fragments.add_select_flight_fragment;
 import com.example.vehicletickets.fragments.add_select_flight_fragmentDirections;
 
@@ -36,11 +37,14 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
     private ArrayList<String> arrival_locationarr;
     private ArrayList<String> arrival_location_fullarr;
     private ArrayList<String> flight_numbersarr;
+    private ArrayList<Integer> money_array;
+    private ArrayList<String> time_array;
+
     private View.OnClickListener mOnClickListener;
     private Context context;
 
 
-    public flight_info_adapter(ArrayList<String> departure_location, ArrayList<String> departure_location_full, ArrayList<String> date_location, ArrayList<String> arrival_location, ArrayList<String> arrival_location_full, ArrayList<String> flight_numbers,Context context) {
+    public flight_info_adapter(ArrayList<String> departure_location, ArrayList<String> departure_location_full, ArrayList<String> date_location, ArrayList<String> arrival_location, ArrayList<String> arrival_location_full, ArrayList<String> flight_numbers,ArrayList<Integer> money_array,ArrayList<String> time_array,Context context) {
 
         this.departure_locationarr = departure_location;
         this.departure_location_fullarr = departure_location_full;
@@ -49,6 +53,8 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
         this.arrival_locationarr = arrival_location;
         this.arrival_location_fullarr = arrival_location_full;
         this.flight_numbersarr = flight_numbers;
+        this.money_array=money_array;
+        this.time_array=time_array;
         this.context = context;
     }
 
@@ -74,12 +80,29 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
         holder.arrival_location.setText(arrival_locationarr.get(position));
         holder.arrival_location_full.setText(arrival_location_fullarr.get(position));
         holder.flight_numbers.setText(flight_numbersarr.get(position));
+        holder.time.setText(time_array.get(position));
+
+        String a="$"+money_array.get(position);
+        holder.money.setText(a);
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-               NavDirections action= add_select_flight_fragmentDirections.actionAddSelectFlightFragmentToAddSeatFragment();
-               Navigation.findNavController(v).navigate(action);;
+//                add_flight_fragmentDirections.ActionAddFlightFragmentToAddSelectFlightFragment action=add_flight_fragmentDirections.actionAddFlightFragmentToAddSelectFlightFragment();
+                add_select_flight_fragmentDirections.ActionAddSelectFlightFragmentToAddSeatFragment action=add_select_flight_fragmentDirections.actionAddSelectFlightFragmentToAddSeatFragment();
+                action.setArrivalLocation(arrival_locationarr.get(position));
+                action.setArrivalLocationFull(arrival_location_fullarr.get(position));
+                action.setDepartureLocation(departure_locationarr.get(position));
+                action.setDepartureLocationFull(departure_location_fullarr.get(position));
+                action.setDateLocation(date_locationarr.get(position));
+                action.setFlightNumbers(flight_numbersarr.get(position));
+                action.setMoney(money_array.get(position));
+                action.setTime(time_array.get(position));
+                Navigation.findNavController(v).navigate(action);
+
+
+//               NavDirections action= add_select_flight_fragmentDirections.actionAddSelectFlightFragmentToAddSeatFragment();
+//               Navigation.findNavController(v).navigate(action);;
 
             }
         });
@@ -101,6 +124,8 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
         TextView arrival_location;
         TextView arrival_location_full;
         TextView flight_numbers;
+        TextView money;
+        TextView time;
 
 
 
@@ -112,8 +137,10 @@ public class flight_info_adapter extends RecyclerView.Adapter<flight_info_adapte
             date_location=itemView.findViewById(R.id.date_location);
 
             arrival_location=itemView.findViewById(R.id.arrival_location);
-            arrival_location_full=itemView.findViewById(R.id.departure_location_full);
+            arrival_location_full=itemView.findViewById(R.id.arrival_location_full);
             flight_numbers=itemView.findViewById(R.id.flight_numbers);
+            money=itemView.findViewById(R.id.money);
+            time=itemView.findViewById(R.id.time);
 
         }
     }

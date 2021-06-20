@@ -105,14 +105,7 @@ public class add_flight_fragment extends Fragment implements AdapterView.OnItemS
             @Override
             public void onClick(View v) {
 
-//                NavDirections action= add_flight_fragmentDirections.actionAddFlightFragmentToAddSelectFlightFragment();
                 add_flight_fragmentDirections.ActionAddFlightFragmentToAddSelectFlightFragment action=add_flight_fragmentDirections.actionAddFlightFragmentToAddSelectFlightFragment();
-
-                /*
-                * private Spinner spinnerselect_departure;
-    private Spinner spinnerselect_arrival_location;
-    private Spinner spinnerclass_add_flight;
-                * */
                 action.setArrivalLocation(spinnerselect_arrival_location.getSelectedItem().toString());
                 action.setDepartureLocation(spinnerselect_departure.getSelectedItem().toString());
                 action.setClassType(spinnerclass_add_flight.getSelectedItem().toString());

@@ -130,6 +130,7 @@
                 android:textSize="15dp"
                 android:textStyle="bold" />
             <TextView
+                android:id="@+id/ticket_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
@@ -190,7 +191,7 @@
                     android:textSize="15dp"
                     />
                 <TextView
-                    android:id="@+id/boardintime_info"
+                    android:id="@+id/boardingtime_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23dp"
@@ -209,6 +210,7 @@
                 android:orientation="vertical">
 
                 <TextView
+                    android:visibility="invisible"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23dp"
@@ -219,6 +221,7 @@
                     android:textSize="15dp"
                     />
                 <TextView
+                    android:visibility="invisible"
                     android:id="@+id/gate_info"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -293,7 +296,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23dp"
                     android:layout_marginTop="5dp"
-                    android:text="$170.00"
+                    android:text="Economy"
                     android:textColor="@color/wireframe"
                     android:textSize="15dp"
                     android:textStyle="bold" />

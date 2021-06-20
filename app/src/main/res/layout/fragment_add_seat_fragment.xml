@@ -488,7 +488,7 @@
                     android:layout_marginTop="15dp"
                     android:layout_gravity="right"/>
                 <TextView
-                    android:id="@+id/flıght_number"
+                    android:id="@+id/flight_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="kb77"
@@ -500,7 +500,7 @@
                     android:id="@+id/seat_number"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="19"
+                    android:text="0"
                     android:textSize="40dp"
                     android:textColor="@color/arabrengi"
                     android:layout_gravity="right"

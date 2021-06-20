@@ -22,7 +22,7 @@
             android:text="DEP"
             android:layout_gravity="left"
             android:textColor="@color/arab"
-            android:textSize="35dp"
+            android:textSize="30dp"
             />
         <TextView
             android:id="@+id/departure_location_full"
@@ -31,7 +31,7 @@
             android:text="full"
             android:layout_gravity="left"
             android:textColor="@color/arab"
-            android:textSize="25dp"
+            android:textSize="15dp"
             />
 
         <TextView
@@ -54,6 +54,14 @@
             android:textSize="20dp"
             />
 
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:textColor="@color/arab"
+            android:textSize="15dp" />
+
     </LinearLayout>
 
     <LinearLayout
@@ -70,7 +78,7 @@
             android:layout_gravity="left"
             android:text="ARR"
             android:textColor="@color/arab"
-            android:textSize="35dp" />
+            android:textSize="30dp" />
 
         <TextView
             android:id="@+id/arrival_location_full"
@@ -79,7 +87,7 @@
             android:layout_gravity="left"
             android:text="FULL"
             android:textColor="@color/arab"
-            android:textSize="25dp" />
+            android:textSize="15dp" />
 
         <TextView
             android:layout_marginTop="15dp"
@@ -98,6 +106,15 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:text="number"
+            android:textColor="@color/arab"
+            android:textSize="15dp" />
+        <TextView
+            android:id="@+id/money"
+            android:layout_marginTop="60dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:text="Money"
             android:textColor="@color/arab"
             android:textSize="15dp" />
     </LinearLayout>

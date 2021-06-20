@@ -18,13 +18,40 @@
         android:name="com.example.vehicletickets.fragments.add_seat_fragment"
         android:label="fragment_add_seat_fragment"
         tools:layout="@layout/fragment_add_seat_fragment" >
-        <argument
-            android:name="age"
-            app:argType="integer"
-            android:defaultValue="0" />
         <action
             android:id="@+id/action_add_seat_fragment_to_add_checkout_fragment"
             app:destination="@id/add_checkout_fragment" />
+        <argument
+            android:name="departure_location"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="date_location"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="arrival_location"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument android:name="departure_location_full"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="arrival_location_full"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="flight_numbers"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="time"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="money"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/add_select_flight_fragment"
@@ -63,6 +90,41 @@
         <action
             android:id="@+id/action_add_checkout_fragment_to_add_payment_info"
             app:destination="@id/add_payment_info" />
+        <argument
+            android:name="departure_location"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="departure_location_full"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="arrival_location"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="arrival_location_full"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="flight_date"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="time"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="seat_number"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument android:name="flight_no"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="money"
+            app:argType="integer"
+            android:defaultValue="0" />
     </fragment>
     <fragment
         android:id="@+id/add_payment_info"
@@ -72,6 +134,42 @@
         <action
             android:id="@+id/action_add_payment_info_to_newMainActivity"
             app:destination="@id/newMainActivity" />
+        <argument
+            android:name="time"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="money"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <argument
+            android:name="flight_number_"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="flight_date"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="departure_full"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="departure"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="arrival_full"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="arrival"
+            app:argType="string"
+            android:defaultValue="null" />
+        <argument
+            android:name="seat_number"
+            app:argType="string"
+            android:defaultValue="null" />
     </fragment>
     <activity
         android:id="@+id/newMainActivity"
