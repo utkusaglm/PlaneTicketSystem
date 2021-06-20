@@ -20,11 +20,16 @@ import com.example.vehicletickets.R;
 import com.example.vehicletickets.models.Users;
 
 import com.example.vehicletickets.adapter.profileRecyclerAdapter;
+import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 
@@ -36,6 +41,7 @@ public class NewProfileFragment extends Fragment {
 
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     DocumentReference documentReference;
+    CollectionReference collectionReference;
     FirebaseAuth firebaseAuth = FirebaseAuth.getInstance();
 
 //    ArrayList<String> url = new ArrayList<>();
@@ -50,6 +56,9 @@ public class NewProfileFragment extends Fragment {
     ArrayList<String> arrival_location_fullarr = new ArrayList<>();
     ArrayList<String> flight_numbersarr = new ArrayList<>();
 
+    ArrayList<String> timearr= new ArrayList<>();
+    ArrayList<String> seatarr= new ArrayList<>();
+    ArrayList<String> money= new ArrayList<>();
 
     profileRecyclerAdapter pra;
     RecyclerView recyclerView;
@@ -64,67 +73,9 @@ public class NewProfileFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        documentReference = db.collection("users").document(firebaseAuth.getCurrentUser().getEmail());
-        DocumentReference documentReferenceforcities = db.collection("cities").document("cities");
-        documentReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                Users users = documentSnapshot.toObject(Users.class);
-
-                //TO DO DO not make it static.
-                ArrayList<String> listOfFlights = users.getFlights();
-
-                for (String a : listOfFlights) {
-//                    namesurname.add(users.getName() + " " + users.getSurname());
-//                    documentReferenceforcities.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-//                        @Override
-//                        public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                            Map<String, Object> map = (Map<String, Object>) documentSnapshot.get(a);
-//                            if (map != null) {
-//                                story.add((String) map.get("story"));
-//                                url.add((String) map.get("link"));
-//                                System.out.println(((String) map.get("link")));
-//                                System.out.println(((String) map.get("story")));
-//                                pra.notifyDataSetChanged();
-//
-//                            }
-//                        }
-//                    }).addOnFailureListener(new OnFailureListener() {
-//                        @Override
-//                        public void onFailure(@NonNull Exception e) {
-//                            Toast.makeText(getContext(), e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-                    departure_locationarr.add("att");
-                    departure_location_fullarr.add("attargah");
-                    date_locationarr.add("01.04.2020");
-
-                    arrival_locationarr.add("arrr");
-                    arrival_location_fullarr.add("arriab");
-                    flight_numbersarr.add("05.09.202");
-                    pra.notifyDataSetChanged();
-
-                }
-
-//                  pra.notifyDataSetChanged();
 
 
-//
-//                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
-//                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
-//                story.add("är en utfyllnadstext från tryck- och förlagsindustrin. Lorem ipsum har varit standard ända sedan 1500-talet, när en okänd boksättare tog att antal bokstäver och blandade dem för at");
-//
-//                //url=new ArrayList<String>(users.getFlights());
-//
-//                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
-//                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
-//                url.add("https://firebasestorage.googleapis.com/v0/b/vehicletickets.appspot.com/o/antalyahavalimani.jpg?alt=media&token=fe3c6db0-f232-4296-8f49-9243dc2a1245");
-
-
-            }
-        });
-
-        pra = new profileRecyclerAdapter(departure_locationarr, departure_location_fullarr, date_locationarr, arrival_locationarr, arrival_location_fullarr, flight_numbersarr,getContext());
+        pra = new profileRecyclerAdapter(departure_locationarr, departure_location_fullarr, date_locationarr, arrival_locationarr, arrival_location_fullarr, flight_numbersarr,timearr,seatarr,money,getContext());
 
 
         pageViewModel = new ViewModelProvider(requireActivity()).get(PageViewModel.class);
@@ -135,6 +86,8 @@ public class NewProfileFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
+
+
         View view = inflater.inflate(R.layout.fragment_new_profile, container, false);
         new_res = view.findViewById(R.id.button_res);
         recyclerView = view.findViewById(R.id.profilerecyclerview);
@@ -155,9 +108,42 @@ public class NewProfileFragment extends Fragment {
         return view;
     }
 
+
+
+
+
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
+        collectionReference=db.collection("my_flights");
+
+        collectionReference
+                .whereEqualTo("mail",firebaseAuth.getCurrentUser().getEmail())
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+            @Override
+            public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                if (task.isSuccessful()) {
+                    for (QueryDocumentSnapshot document : task.getResult()) {
+                        departure_locationarr.add(document.getString("departure_path_short"));
+                        departure_location_fullarr.add(document.getString("departure_path"));
+                        date_locationarr.add(document.getString("date"));
+                        arrival_locationarr.add(document.getString("arrival_path_short"));
+                        arrival_location_fullarr.add(document.getString("arrival_path"));
+                        flight_numbersarr.add(document.getString("fligt_number"));
+                        timearr.add(document.getString("time"));
+                        seatarr.add(document.getString("seat"));
+                        money.add(document.get("money").toString());
+
+
+
+                    }
+                } else {
+                }
+                pra.notifyDataSetChanged();
+
+            }
+        });
 
 
     }

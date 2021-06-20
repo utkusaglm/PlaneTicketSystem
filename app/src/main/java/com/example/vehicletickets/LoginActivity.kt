@@ -30,7 +30,7 @@ class LoginActivity : AppCompatActivity() {
         nameAndSurname = findViewById(R.id.NameSurnameLogin) as EditText
 
 
-        ///if user already login
+        //if user already login
         if (auth.currentUser != null) {
             val user = auth.currentUser
             val intent = Intent(this, NewMainActivity::class.java).apply {
@@ -133,16 +133,16 @@ class LoginActivity : AppCompatActivity() {
             val surname: String? = null,
             val email: String? = null,
             val country: String? = null,
-            val numberOfFlies: Long? = null,
+//            val numberOfFlies: Long? = null,
             val bonus: Long? = null,
-            val flights: List<String>? = null,
+//            val flights: List<String>? = null,
             val creditCardInfo: CreditCard? = null,
             val wallet: Long? = null
         )
 
-        val listOfFlies: List<String> = listOf("Antalya", "Corum", "Zurih")
+//        val listOfFlies: List<String> = listOf("Antalya", "Corum", "Zurih")
 
-        val users = Users(firstname, lastname, email, "Turkey", 3, 20, listOfFlies, null, 140)
+        val users = Users(firstname, lastname, email, "Turkey", 3)
         db.collection("users").document(email).set(users).addOnSuccessListener {
             Toast.makeText(this@LoginActivity, "record added successfully ", Toast.LENGTH_SHORT)
                 .show()

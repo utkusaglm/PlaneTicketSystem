@@ -172,19 +172,22 @@
                         android:layout_marginTop="2dp"
                         android:textColor="@color/white"
                         android:alpha=".5"/>
-                    <EditText
+<!--                    <EditText-->
+<!--                        android:id="@+id/select_departure"-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginTop="3dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:hint="Select Departure"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:textColorHint="@color/white"-->
+<!--                        />-->
+                    <Spinner
                         android:id="@+id/select_departure"
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@color/white"
-                        android:hint="Select Departure"
-                        android:background="@android:color/transparent"
-                        android:textColorHint="@color/white"
-                        />
-
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
 
 
@@ -237,18 +240,22 @@
                         android:layout_marginTop="2dp"
                         android:textColor="@color/white"
                         android:alpha=".5"/>
-                    <EditText
+<!--                    <EditText-->
+<!--                        android:id="@+id/select_arrival_location"-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:textSize="20dp"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:layout_marginTop="3dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:hint="Arrival"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:textColorHint="@color/white"-->
+<!--                        />-->
+                    <Spinner
                         android:id="@+id/select_arrival_location"
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:textSize="20dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@color/white"
-                        android:hint="Arrival"
-                        android:background="@android:color/transparent"
-                        android:textColorHint="@color/white"
-                        />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
@@ -312,6 +319,10 @@
                         android:hint="Select Date"
                         android:background="@android:color/transparent"
                         android:textColorHint="@color/white"
+                        android:clickable="false"
+                        android:cursorVisible="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
                         />
 
                 </LinearLayout>
@@ -376,7 +387,7 @@
                         android:layout_marginLeft="10dp"
                         android:textColor="@color/white"
                         android:layout_marginTop="3dp"
-                        android:hint="1"
+                        android:text="1"
                         android:textColorHint="@color/white"
                         android:background="@android:color/transparent"
 
@@ -435,17 +446,21 @@
                         android:textColor="@color/white"
                         android:alpha=".5"/>
 
-                    <EditText
+<!--                    <EditText-->
+<!--                        android:id="@+id/class_add_flight"-->
+<!--                        android:layout_width="300dp"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginLeft="10dp"-->
+<!--                        android:background="@android:color/transparent"-->
+<!--                        android:hint="Economy"-->
+<!--                        android:layout_marginTop="3dp"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textColorHint="@color/white"-->
+<!--                        android:textSize="20dp" />-->
+                    <Spinner
                         android:id="@+id/class_add_flight"
                         android:layout_width="300dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:background="@android:color/transparent"
-                        android:hint="Economy"
-                        android:layout_marginTop="3dp"
-                        android:textColor="@color/white"
-                        android:textColorHint="@color/white"
-                        android:textSize="20dp" />
+                        android:layout_height="wrap_content" />
 
                 </LinearLayout>
 
