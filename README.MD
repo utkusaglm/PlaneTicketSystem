@@ -1,5 +1,3 @@
-# Term-project-Utku-Saglam
-
 # Plane Ticket System.
 
 ### Features
